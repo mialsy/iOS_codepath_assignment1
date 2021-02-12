@@ -24,4 +24,12 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 <img src="https://github.com/mialsy/iOS_codepath_assignment1/blob/main/FlixDemo.gif" width=250><br>
 
 ### Notes
-Describe any challenges encountered while building the app.
+- XCode version different from the video guide, lauch screen not initialized.
+  - Solution: add lauch screen file manually, and change the name to corresponding name to be able to include in the app.
+  - Note: The file name has to be the same, possible other solution need to be further explored.
+- Issue with text view to controler mapping:
+  - Solution: figured out that there was a wrong duplicated controller link to the text view, delete duplicate can solve the problem.
+  - Note: Make sure to check the controller mapping after it is established.
+- Network issue with calling tmdb APIs
+  - Solution: tried to call tmdb APIs directlly and still not working, then realized that I used http protocol rather than https protocol, changed to https as documented in the tmdb website fixed issue.
+  - Note: be sure to distinguish https and http.
