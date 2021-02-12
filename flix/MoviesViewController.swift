@@ -16,6 +16,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         print("lauched")
 
         // Do any additional setup after loading the view.
@@ -31,6 +34,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
               let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
             
             self.movies = dataDictionary["results"] as! [[String:Any]]
+            
+            self.tableView.reloadData()
+            
             print(dataDictionary)
 
               // TODO: Get the array of movies
@@ -43,14 +49,25 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return movies.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-        let cell = UITableViewCell()
+    func tableView( _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
         
-        cell.textLabel?.text = "rw: \(indexPath.row)"
+        let movie = movies[indexPath.row]
+        let title = movie["title"] as! String
+        let synopsis = movie["overview"] as! String
+        
+        print(cell)
+        
+        cell.titleLabel.text = title
+        cell.synopsisLabel.text = synopsis
+        
+        let baseUrl = "http://image.tmdb.org/t/p/w185"
+        let posterPath = movie["poster_path"] as! String
+        let postUrl = URL(string: baseUrl + posterPath)
+        
         
         return cell
     }
