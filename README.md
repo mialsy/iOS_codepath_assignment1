@@ -15,12 +15,12 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 - [ ] (2pts) In the detail view, when the user taps the poster, a new screen is presented modally where they can view the trailer.
 
 ### App Walkthrough GIF
-`TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
 
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+<img src="https://github.com/mialsy/iOS_codepath_assignment1/blob/main/FlixPart2Demo.gif" width=250 alt="Part 2 demo gif here. Let me know if this link breaks"><br>
 
 ### Notes
-Describe any challenges encountered while building the app.
+- Grid view appear to be very small
+  - Solution: checked slack channel and see people have the same problem, fix by setting the estimate size to none.
 
 ---
 
@@ -39,7 +39,7 @@ Describe any challenges encountered while building the app.
 
 ### App Walkthrough GIF
 
-<img src="https://github.com/mialsy/iOS_codepath_assignment1/blob/main/FlixDemo.gif" width=250><br>
+<img src="https://github.com/mialsy/iOS_codepath_assignment1/blob/main/FlixDemo.gif" alt="Demo gif here. Let me know if this link breaks" width=250><br>
 
 ### Notes
 - XCode version different from the video guide, lauch screen not initialized.
